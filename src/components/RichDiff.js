@@ -1,4 +1,4 @@
-const React = require('react');
+const createReactClass = require('create-react-class');
 const PropTypes = require('prop-types');
 const Changes = require('./Changes');
 
@@ -6,7 +6,7 @@ const Changes = require('./Changes');
  * Render an entire diff from a state.
  * @type {React}
  */
-const RichDiff = React.createClass({
+const RichDiff = createReactClass({
     propTypes: {
         className: PropTypes.string,
         state:     PropTypes.object.isRequired,

@@ -1,11 +1,11 @@
-const React = require('react');
 const PropTypes = require('prop-types');
+const createReactClass = require('create-react-class');
 
 /**
  * Render an indicator for a change (added, modified, etc) with the right class name.
  * @type {ReactClass}
  */
-const ChangeIndicator = React.createClass({
+const ChangeIndicator = createReactClass({
     propTypes: {
         kind:     PropTypes.string.isRequired,
         type:     PropTypes.string.isRequired,

@@ -1,4 +1,4 @@
-const React = require('react');
+const createReactClass = require('create-react-class');
 const PropTypes = require('prop-types');
 const { List } = require('immutable');
 
@@ -15,7 +15,7 @@ function classNameForChange(node, change) {
  * Render a change without changed
  * @type {React}
  */
-const IdenticalChange = React.createClass({
+const IdenticalChange = createReactClass({
     propTypes: {
         change: PropTypes.object.isRequired
     },
@@ -30,7 +30,7 @@ const IdenticalChange = React.createClass({
  * Render a change that is being added
  * @type {React}
  */
-const AddedRemovedChange = React.createClass({
+const AddedRemovedChange = createReactClass({
     propTypes: {
         change: PropTypes.object.isRequired
     },
@@ -52,7 +52,7 @@ const AddedRemovedChange = React.createClass({
  * Render a modification between two nodes.
  * @type {React}
  */
-const ModifiedChange = React.createClass({
+const ModifiedChange = createReactClass({
     propTypes: {
         change: PropTypes.object.isRequired
     },
@@ -82,7 +82,7 @@ const ModifiedChange = React.createClass({
  * Render a change.
  * @type {React}
  */
-const Change = React.createClass({
+const Change = createReactClass({
     propTypes: {
         change: PropTypes.object.isRequired
     },
@@ -110,7 +110,7 @@ const Change = React.createClass({
  * Wrap identitcal changes in a toggable div.
  * @type {React}
  */
-const ToggableGroup = React.createClass({
+const ToggableGroup = createReactClass({
     propTypes: {
         changes: PropTypes.object.isRequired
     },
@@ -152,7 +152,7 @@ const ToggableGroup = React.createClass({
  * Render a list of changes.
  * @type {React}
  */
-const Changes = React.createClass({
+const Changes = createReactClass({
     propTypes: {
         changes:   PropTypes.object.isRequired,
         Wrapper:   PropTypes.func,

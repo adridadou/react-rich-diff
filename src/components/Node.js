@@ -1,4 +1,4 @@
-const React = require('react');
+const createReactClass = require('create-react-class');
 const PropTypes = require('prop-types');
 const NodeWrapper = require('./NodeWrapper');
 const TextRange = require('./TextRange');
@@ -7,7 +7,7 @@ const TextRange = require('./TextRange');
  * Render an entire slate node and its children.
  * @type {React}
  */
-const Node = React.createClass({
+const Node = createReactClass({
     propTypes: {
         node:       PropTypes.object.isRequired,
         attributes: PropTypes.object

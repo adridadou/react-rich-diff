@@ -1,4 +1,4 @@
-const React = require('react');
+const createReactClass = require('create-react-class');
 const schema = require('../schema');
 const PropTypes = require('prop-types');
 
@@ -6,7 +6,7 @@ const PropTypes = require('prop-types');
  * Leaf of a document: text range
  * @type {React}
  */
-const TextRange = React.createClass({
+const TextRange = createReactClass({
     propTypes: {
         range:      PropTypes.object.isRequired,
         attributes: PropTypes.object

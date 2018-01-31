@@ -1,4 +1,4 @@
-const React = require('react');
+const createReactClass = require('create-react-class');
 const PropTypes = require('prop-types');
 const classNames = require('classnames');
 const diffToTitle = require('./diffToTitle');
@@ -18,7 +18,7 @@ const CRITERIAS = [
  * Render a link with a tooltip to signal the change.
  * @type {React}
  */
-const LinkNode = React.createClass({
+const LinkNode = createReactClass({
     propTypes: {
         attributes: PropTypes.object.isRequired,
         node:       PropTypes.object.isRequired,

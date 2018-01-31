@@ -1,4 +1,4 @@
-const React = require('react');
+const createReactClass = require('create-react-class');
 const classNames = require('classnames');
 const { BLOCKS } = require('markup-it');
 const PropTypes = require('prop-types');
@@ -29,7 +29,7 @@ const CRITERIAS = [
  * Render an heading that has been modified.
  * @type {React}
  */
-const HeadingNode = React.createClass({
+const HeadingNode = createReactClass({
     propTypes: {
         original:   PropTypes.object,
         attributes: PropTypes.object.isRequired,

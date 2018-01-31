@@ -1,11 +1,11 @@
-const React = require('react');
+const createReactClass = require('create-react-class');
 const PropTypes = require('prop-types');
 
 /**
  * Render an image node.
  * @type {React}
  */
-const ImageNode = React.createClass({
+const ImageNode = createReactClass({
     propTypes: {
         attributes: PropTypes.object.isRequired,
         node:       PropTypes.object.isRequired
