@@ -80204,7 +80204,7 @@ var IdenticalChange = createReactClass({
  * Render a change that is being added
  * @type {React}
  */
-var AddedRemovedChange = React.createClass({
+var AddedRemovedChange = createReactClass({
     displayName: 'AddedRemovedChange',
 
     propTypes: {
@@ -80227,7 +80227,7 @@ var AddedRemovedChange = React.createClass({
  * Render a modification between two nodes.
  * @type {React}
  */
-var ModifiedChange = React.createClass({
+var ModifiedChange = createReactClass({
     displayName: 'ModifiedChange',
 
     propTypes: {
@@ -80264,7 +80264,7 @@ var ModifiedChange = React.createClass({
  * Render a change.
  * @type {React}
  */
-var Change = React.createClass({
+var Change = createReactClass({
     displayName: 'Change',
 
     propTypes: {
@@ -80295,7 +80295,7 @@ var Change = React.createClass({
  * Wrap identitcal changes in a toggable div.
  * @type {React}
  */
-var ToggableGroup = React.createClass({
+var ToggableGroup = createReactClass({
     displayName: 'ToggableGroup',
 
     propTypes: {
@@ -80342,7 +80342,7 @@ var ToggableGroup = React.createClass({
  * Render a list of changes.
  * @type {React}
  */
-var Changes = React.createClass({
+var Changes = createReactClass({
     displayName: 'Changes',
 
     propTypes: {
