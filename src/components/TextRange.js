@@ -1,5 +1,6 @@
 const React = require('react');
 const schema = require('../schema');
+const PropTypes = require('prop-types');
 
 /**
  * Leaf of a document: text range
@@ -7,8 +8,8 @@ const schema = require('../schema');
  */
 const TextRange = React.createClass({
     propTypes: {
-        range:      React.PropTypes.object.isRequired,
-        attributes: React.PropTypes.object
+        range:      PropTypes.object.isRequired,
+        attributes: PropTypes.object
     },
 
     getDefaultProps() {

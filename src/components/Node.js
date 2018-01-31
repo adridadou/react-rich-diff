@@ -1,4 +1,5 @@
 const React = require('react');
+const PropTypes = require('prop-types');
 const NodeWrapper = require('./NodeWrapper');
 const TextRange = require('./TextRange');
 
@@ -8,8 +9,8 @@ const TextRange = require('./TextRange');
  */
 const Node = React.createClass({
     propTypes: {
-        node:       React.PropTypes.object.isRequired,
-        attributes: React.PropTypes.object
+        node:       PropTypes.object.isRequired,
+        attributes: PropTypes.object
     },
 
     getDefaultProps() {

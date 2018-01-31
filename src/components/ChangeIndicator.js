@@ -1,4 +1,5 @@
 const React = require('react');
+const PropTypes = require('prop-types');
 
 /**
  * Render an indicator for a change (added, modified, etc) with the right class name.
@@ -6,9 +7,9 @@ const React = require('react');
  */
 const ChangeIndicator = React.createClass({
     propTypes: {
-        kind:     React.PropTypes.string.isRequired,
-        type:     React.PropTypes.string.isRequired,
-        children: React.PropTypes.node
+        kind:     PropTypes.string.isRequired,
+        type:     PropTypes.string.isRequired,
+        children: PropTypes.node
     },
 
     render() {

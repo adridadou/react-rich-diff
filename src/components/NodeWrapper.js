@@ -1,4 +1,5 @@
 const React = require('react');
+const PropTypes = require('prop-types');
 const schema = require('../schema');
 
 /**
@@ -8,10 +9,10 @@ const schema = require('../schema');
  */
 const NodeWrapper = React.createClass({
     propTypes: {
-        node:       React.PropTypes.object.isRequired,
-        attributes: React.PropTypes.object.isRequired,
-        original:   React.PropTypes.object,
-        children:   React.PropTypes.node
+        node:       PropTypes.object.isRequired,
+        attributes: PropTypes.object.isRequired,
+        original:   PropTypes.object,
+        children:   PropTypes.node
     },
 
     render() {
