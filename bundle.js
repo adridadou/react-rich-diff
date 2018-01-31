@@ -79930,6 +79930,7 @@ var classNames = require('classnames');
 var _require = require('markup-it'),
     BLOCKS = _require.BLOCKS;
 
+var PropTypes = require('prop-types');
 var diffToTitle = require('./diffToTitle');
 
 var TAGS = (_TAGS = {}, _defineProperty(_TAGS, BLOCKS.HEADING_1, 'h1'), _defineProperty(_TAGS, BLOCKS.HEADING_2, 'h2'), _defineProperty(_TAGS, BLOCKS.HEADING_3, 'h3'), _defineProperty(_TAGS, BLOCKS.HEADING_4, 'h4'), _defineProperty(_TAGS, BLOCKS.HEADING_5, 'h5'), _defineProperty(_TAGS, BLOCKS.HEADING_6, 'h6'), _TAGS);
@@ -79955,10 +79956,10 @@ var HeadingNode = React.createClass({
     displayName: 'HeadingNode',
 
     propTypes: {
-        original: React.PropTypes.object,
-        attributes: React.PropTypes.object.isRequired,
-        node: React.PropTypes.object.isRequired,
-        children: React.PropTypes.node.isRequired
+        original: PropTypes.object,
+        attributes: PropTypes.object.isRequired,
+        node: PropTypes.object.isRequired,
+        children: PropTypes.node.isRequired
     },
 
     render: function render() {
@@ -79983,12 +79984,13 @@ var HeadingNode = React.createClass({
 
 module.exports = HeadingNode;
 
-},{"./diffToTitle":479,"classnames":18,"markup-it":172,"react":382}],476:[function(require,module,exports){
+},{"./diffToTitle":479,"classnames":18,"markup-it":172,"prop-types":222,"react":382}],476:[function(require,module,exports){
 'use strict';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var React = require('react');
+var PropTypes = require('prop-types');
 
 /**
  * Render an image node.
@@ -79998,8 +80000,8 @@ var ImageNode = React.createClass({
     displayName: 'ImageNode',
 
     propTypes: {
-        attributes: React.PropTypes.object.isRequired,
-        node: React.PropTypes.object.isRequired
+        attributes: PropTypes.object.isRequired,
+        node: PropTypes.object.isRequired
     },
 
     render: function render() {
@@ -80016,12 +80018,13 @@ var ImageNode = React.createClass({
 
 module.exports = ImageNode;
 
-},{"react":382}],477:[function(require,module,exports){
+},{"prop-types":222,"react":382}],477:[function(require,module,exports){
 'use strict';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var React = require('react');
+var PropTypes = require('prop-types');
 var classNames = require('classnames');
 var diffToTitle = require('./diffToTitle');
 
@@ -80045,10 +80048,10 @@ var LinkNode = React.createClass({
     displayName: 'LinkNode',
 
     propTypes: {
-        attributes: React.PropTypes.object.isRequired,
-        node: React.PropTypes.object.isRequired,
-        original: React.PropTypes.object,
-        children: React.PropTypes.node
+        attributes: PropTypes.object.isRequired,
+        node: PropTypes.object.isRequired,
+        original: PropTypes.object,
+        children: PropTypes.node
     },
 
     render: function render() {
@@ -80077,10 +80080,11 @@ var LinkNode = React.createClass({
 
 module.exports = LinkNode;
 
-},{"./diffToTitle":479,"classnames":18,"react":382}],478:[function(require,module,exports){
+},{"./diffToTitle":479,"classnames":18,"prop-types":222,"react":382}],478:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
+var PropTypes = require('prop-types');
 
 /**
  * Render a table.
@@ -80090,8 +80094,8 @@ var TableNode = React.createClass({
     displayName: 'TableNode',
 
     propTypes: {
-        attributes: React.PropTypes.object.isRequired,
-        children: React.PropTypes.node.isRequired
+        attributes: PropTypes.object.isRequired,
+        children: PropTypes.node.isRequired
     },
 
     render: function render() {
@@ -80114,7 +80118,7 @@ var TableNode = React.createClass({
 
 module.exports = TableNode;
 
-},{"react":382}],479:[function(require,module,exports){
+},{"prop-types":222,"react":382}],479:[function(require,module,exports){
 'use strict';
 
 var NONE = '<None>';
