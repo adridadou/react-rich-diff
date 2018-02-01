@@ -81148,21 +81148,71 @@ var _require = require('immutable'),
 
 
 function getRangesFromText(text) {
-    var ranges = text.getRanges().reduce(function (result, range) {
-        var words = range.text.split(/(\s+)/);
+  var ranges = getRanges(text).reduce(function (result, range) {
+    var words = range.text.split(/(\s+)/);
 
-        words.forEach(function (word) {
-            if (!word) {
-                return;
-            }
+    words.forEach(function (word) {
+      if (!word) {
+        return;
+      }
 
-            result.push(range.set('text', word));
-        });
+      result.push(range.set('text', word));
+    });
 
-        return result;
-    }, []);
+    return result;
+  }, []);
 
-    return List(ranges);
+  return List(ranges);
+}
+
+function getRanges(text) {
+
+  var list = new _immutable.List();
+  var characters = text.getDecorations();
+
+  // If there are no characters, return one empty range.
+  if (characters.size == 0) {
+    return list.push(new _range2.default());
+  }
+
+  // Convert the now-decorated characters into ranges.
+  var ranges = characters.reduce(function (memo, char, i) {
+    var marks = char.marks,
+        text = char.text;
+
+    // The first one can always just be created.
+
+    if (i == 0) {
+      return memo.push(new _range2.default({ text: text, marks: marks }));
+    }
+
+    // Otherwise, compare to the previous and see if a new range should be
+    // created, or whether the text should be added to the previous range.
+    var previous = characters.get(i - 1);
+    var prevMarks = previous.marks;
+    var added = marks.filterNot(function (mark) {
+      return prevMarks.includes(mark);
+    });
+    var removed = prevMarks.filterNot(function (mark) {
+      return marks.includes(mark);
+    });
+    var isSame = !added.size && !removed.size;
+
+    // If the marks are the same, add the text to the previous range.
+    if (isSame) {
+      var index = memo.size - 1;
+      var prevRange = memo.get(index);
+      var prevText = prevRange.get('text');
+      prevRange = prevRange.set('text', prevText += text);
+      return memo.set(index, prevRange);
+    }
+
+    // Otherwise, create a new range.
+    return memo.push(new _range2.default({ text: text, marks: marks }));
+  }, list);
+
+  // Return the ranges.
+  return ranges;
 }
 
 module.exports = getRangesFromText;
