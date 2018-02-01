@@ -81087,6 +81087,7 @@ function isEqual(a, b) {
 
         // For text node, the changes are in the characters
         case 'text':
+        case 'leaf':
             return true;
 
         default:
