@@ -80408,7 +80408,7 @@ var Node = createReactClass({
             return React.createElement(
                 NodeWrapper,
                 { attributes: attributes, node: node },
-                node.getRanges().map(function (c, i) {
+                node.getLeaves().map(function (c, i) {
                     return React.createElement(Node, { key: i, node: c });
                 })
             );
